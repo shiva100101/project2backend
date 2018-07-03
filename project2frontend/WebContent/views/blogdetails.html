@@ -1,0 +1,58 @@
+<h2>Approved BlogPost</h2>
+<div class=row>
+	<div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<b>{{blogPost.blogTitle}}</b> <b>Created By :</b>{{blogPost.postedBy.firstname}}</br>
+				<img alt="Image Not Available" src="http://localhost:8081/project2middleware/getimage/{{blogPost.postedBy.username}}" height="40" width="40">
+				<b>Created on:</b>{{blogPost.postedOn | date : 'dd:MM:yyyy'}}
+			</div>
+			<div class="panel-body">{{blogPost.blogContent}}</div>
+			
+		</div>
+	</div>
+</div>
+<b>Number of Likes</b>
+{{blogPost.likes}}
+<div ng-show="liked">
+	<span class="glyphicon glyphicon-thumbs-up" style="color: blue"
+		ng-click="updateLikes()"></span>
+</div>
+<div ng-show="!liked">
+	<span class="glyphicon glyphicon-thumbs-up" style="color: black"
+		ng-click="updateLikes()"></span>
+</div>
+Blog Comments
+<div class="container">
+	<textarea rows="4" cols="15" ng-model="commentText"></textarea>
+	<br> <input type="submit" ng-click="addComment()"
+		value="POST COMMENT">
+</div>
+
+	<div>
+	 <a href="" ng-click="showComments()"><b>{{blogPost.blogComments.length}} comments</b></a>
+		<ul ng-show="showComment" style="list-style:none">
+			<li
+				ng-repeat="comment in blogPost.blogComments | orderBy:'-commentedOn'">
+				{{comment.commentText}}<br /> <Strong>Commented By </Strong>
+				{{comment.commentedBy.username}} &nbsp; <strong>Commented On</strong>
+				{{comment.commentedOn | date : 'medium'}}
+			</li>
+		</ul>
+	</div>
+	<a href="#/home"><button>Back</button></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

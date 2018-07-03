@@ -1,0 +1,41 @@
+<div id="main" 
+	style="width: 40%; margin-left: auto; margin-right: auto;margin-top:80px;">
+  
+	<span style="color:red;" ng-if="error.code==1">{{error.message}}</span>
+  
+	<form>
+	<br>
+	<br>
+		<h3 align="center">Edit profile</h3>
+<br>
+		<label class="labelst">User Name</label> 
+		<input class="form-control"
+			type="text" ng-model="user.username" disabled>
+			<span style="color:red;" ng-if="error.code==2">{{error.message}}</span>
+			<br><label class="labelst">Password</label>
+		<input class="form-control" type="password" ng-model="user.password">
+		
+		<br>
+		<label class="labelst">First Name</label> <input class="form-control"
+			type="text" ng-model="user.firstname"> <br><label class="labelst">Last
+			Name</label> <input class="form-control" type="text" ng-model="user.lastname"><br>
+		<label class="labelst">Phone number</label> <input
+			class="form-control" type="text" ng-model="user.phonenumber"><br>
+		<label class="labelst">Email Id</label> <input class="form-control"
+			type="email" ng-model="user.email" disabled> 
+			<span style="color:red;" ng-if="error.code==3">{{error.message}}</span>
+			<br><label class="labelst">Country</label>
+		<input class="form-control" type="text" ng-model="user.country"><br>
+		<label class="labelst">Pincode</label> <input class="form-control"
+			type="text" ng-model="user.pincode"> <br><label class="labelst">Select
+			Role:</label> <input type="radio" value="STUDENT" ng-model="user.role">Student
+		<br><input type="radio" value="EMPLOYEE" ng-model="user.role">Employee
+		<input type="radio" value="ALUMNI" ng-model="user.role">Alumni
+		
+		<br>
+		<br>
+		<button style="width:20%;margin-left: 40%;height:35px;color:white;"
+						class="btn btn-success btn-outline"
+		type="submit" class="submitbtn" ng-click="editUserProfile()">Update Profile</button>
+	</form>
+</div>

@@ -1,0 +1,36 @@
+<section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-parallax-background"
+	id="header2-6" data-rv-view="0"
+	style="background-image:url(images/happy.jpg);background-repeat: no-repeat;">
+
+<div id=box1 style="width:70%;margin-left:25%;margin-right:auto;margin-top:150px;">
+
+
+<div id="box2" style="float:left;margin-bottom:5px;">
+<div ng-repeat="user in suggestedusers" style="margin-bottom: 0px;">
+<div id="innerbox" style="width:500px;float:left;">
+<img src="http://localhost:8081/project2middleware/getimage/{{user.username}}" alt="Image not available" style="width:150px;height:150px; border-radius: 50%;"/>
+
+<a href="" ng-click="getuserdetails(user.username)" style="font-family: cursive;color:black;">{{user.firstname}}</a>
+
+		{{user.lastname}}
+		<br>
+<a  ng-click="sendFriendRequest(user.username)" style="margin-left:35px;"> Add Friend</a>
+<br>
+</div>
+</div>
+</div>
+<div ng-show="showDetails">
+	<h4 style="align:center;">Profile Details</h4>
+	<br>
+	Name :{{details.firstname}} {{details.lastname}} 
+	<br>
+	Email Id :{{details.email}}
+	<br>
+	Role :{{details.role}}
+	<br>
+	Country :{{details.country}}
+	<br><br>
+	</div>
+	</div>
+
+</section>

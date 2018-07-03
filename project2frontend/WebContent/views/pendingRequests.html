@@ -1,0 +1,42 @@
+<section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-parallax-background"
+	id="header2-6" data-rv-view="0"
+	style="background-image:url(images/friendimg1.jpg);background-repeat: no-repeat;">
+<div id=box1 style="width:70%;margin-left:20%;margin-right:auto;margin-top:150px;">
+
+
+<div ng-show="pendingrequests.length==0">
+<b> No Request from friends</b>
+</div>
+<table class="table" ng-show="pendingrequests.length>0">
+<tr>
+<th>Username</th>
+<th>Accept</th>
+<th>Delete</th>
+</tr>
+<tbody>
+<tr ng-repeat="pendingrequest in pendingrequests">
+
+<td><a href="" ng-click="getuserdetails(pendingrequest.fromId)" style="color:black;font-size:30px;">
+<img src="http://localhost:8082/middleware/getimage/{{pendingrequest.fromId}}" alt="Image not available" style="width:50px;height:50px; border-radius: 50%;"/>{{pendingrequest.fromId}}</a> </td>
+
+<td><a ng-click="updatePendingRequest(pendingrequest,'A')" style="color:green;font-size:30px;">Accept</a></td>
+<td><a ng-click="updatePendingRequest(pendingrequest,'D')" style="color:red;font-size:30px;">Delete</a></td>
+</tr>
+</tbody>
+
+</table>
+<div ng-show="showDetails" class="list-group-item" >
+	<h3 style="align:center;" class="list-group-item">Profile Details</h3>
+	<br>
+	<h4 class="list-group-item">Name :{{details.firstname}} {{details.lastname}}</h4> 
+	<br>
+	<h4 class="list-group-item">Email Id :{{details.email}}</h4>
+	<br>
+	<h4 class="list-group-item">Role :{{details.role}}</h4>
+	<br>
+	<h4 class="list-group-item">Country :{{details.country}}</h4>
+	<br><br>
+	</div>
+
+	</div>
+	</section>

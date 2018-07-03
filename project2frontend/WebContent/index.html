@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Mobirise v4.6.4, mobirise.com">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, minimum-scale=1">
+<link rel="shortcut icon"
+	href="assets/indexpagedesign/images/logo-128x128.jpg"
+	type="image/x-icon">
+<meta name="description" content="">
+<title>Engrave</title>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&subset=latin,cyrillic">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700&subset=latin,vietnamese,latin-ext">
+<link rel="stylesheet"
+	href="assets/indexpagedesign/tether/tether.min.css">
+<link rel="stylesheet"
+	href="assets/indexpagedesign/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="assets/indexpagedesign/socicon/css/socicon.min.css">
+<link rel="stylesheet"
+	href="assets/indexpagedesign/puritym/css/style.css">
+<link rel="stylesheet"
+	href="assets/indexpagedesign/dropdown-menu/style.light.css">
+<link rel="stylesheet"
+	href="assets/indexpagedesign/mobirise/css/mbr-additional.css"
+	type="text/css">
+	<link rel="stylesheet" href="assets/indexpagedesign/soundcloud-plugin/style.css">
+  
+<script src="assets/indexpagedesign/web/assets/jquery/jquery.min.js"></script>
+<script src="assets/indexpagedesign/tether/tether.min.js"></script>
+<script src="assets/indexpagedesign/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/indexpagedesign/smooth-scroll/SmoothScroll.js"></script>
+<script
+	src="assets/indexpagedesign/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js"></script>
+<script src="assets/indexpagedesign/puritym/js/script.js"></script>
+<script src="assets/indexpagedesign/dropdown-menu/script.js"></script>
+
+<!--  Bootstrap, Angular Js ,Angular Route js -->
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
+
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	type="text/javascript"></script>
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+	rel="stylesheet" />
+<title>Insert title here</title>
+</head>
+<body ng-app="app">
+	<header>
+		<nav class="navbar navbar-default">
+
+			<div class="container-fluid">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#collapse-example"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/"><img
+						src="resources/images/Happy.jpg" width="40" height="40"></a>
+				</div>
+				<div class="collapse navbar-collapse" id="collapse-example">
+					<ul class="nav navbar-nav ">
+						<!-- <li><a href="#/home" ng-show="currentUser.username">Welcome
+								{{currentUser.username}}</a></li> -->
+						<li><a href="#/home">Home</a></li>
+						
+						<li><a href="" ng-show="currentUser.username">Welcome {{currentUser.username}}</a></li>
+						
+						<li><a href="#/editprofile" ng-show="currentUser.username">edit
+								user profile</a></li>
+
+						<li class="dropdown"><a href="" class="dropdown-toggle"
+							data-toggle="dropdown" ng-show="currentUser.username"> Job <b
+								class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#/addjob" ng-show="currentUser.role=='admin'">Add
+										Job</a></li>
+								<li><a href="#/alljobs"> Get all jobs</a></li>
+							</ul></li>
+
+						<li class="dropdown"><a href="" class="dropdown-toggle"
+							data-toggle="dropdown" ng-show="currentUser.username"> Blog <b
+								class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#/addblog">Add Blog Post</a></li>
+								<li><a href="#/getblogs"> Get all blogs</a></li>
+							</ul></li>
+
+						<li class="dropdown">
+<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="currentUser.username"> 
+<span class="glyphicon glyphicon-globe" ng-click="updateLength()">
+	<span class="rw-number-notification" ng-if="notificationNotViewedLength>0">{{notificationNotViewedLength}}</span></span></a>
+		<ul class="dropdown-menu">
+		
+		<li ng-repeat="notification in notificationNotViewed" >
+		<a href="" ng-click="updateNotification(notification.id)" style="color:red">
+		<b>"{{notification.blogTitle}}"</b> is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></li>
+		
+		<li ng-repeat="notification in notificationViewed" >
+		<a href="" ng-click="" style="color:blue">
+		{{notification.blogTitle}} is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></li>
+	</ul>
+</li>
+<li><a href="#/uploadpic" ng-show="currentUser.username">
+		<img src="http://localhost:8081/project2middleware/getimage/{{currentUser.username}}" alt="Upload profile pic" height="40" width="40"></a></li>
+		
+<li class="dropdown"><a href="" class="dropdown-toggle"
+							data-toggle="dropdown" ng-show="currentUser.username"> Friend <b
+								class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#/suggestedusers">Suggested users</a></li>
+								<li><a href="#/pendingrequests"> Pending Requests</a></li>
+								<li><a href="#/getfriends"> Friends</a></li>
+							</ul></li>
+
+<!-- <li class="nav-item dropdown"><a
+						class="nav-link link dropdown-toggle"
+						data-toggle="dropdown-submenu" ng-show="currentUser.username">Friend</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#/suggestedusers">Suggested
+								users</a> <a class="dropdown-item" href="#/pendingrequests">Pending
+								Requests</a> <a class="dropdown-item" href="#/getfriends">Friends</a></li> -->
+					
+					 <li class="nav-item"><a class="nav-link link" href="#/chat"
+						ng-show="currentUser.username">chat </a></li>
+					<!-- <li class="nav-item dropdown"><a
+						class="nav-link link dropdown-toggle"
+						data-toggle="dropdown-submenu" ng-show="currentUser.username"><span
+							class="glyphicon glyphicon-globe ng-click="updateLength()">
+								<span class="rw-number-notification"
+								ng-if="notificationNotViewedLength>0">{{notificationNotViewedLength}}</span></a>
+						<div class="dropdown-menu"
+							ng-repeat="notification in notificationNotViewed">
+							<a class="dropdown-item"
+								ng-click="updateNotification(notification.id)"
+								style="color: red">"{{notification.blogTitle}}"</b> is
+								{{notification.approvalStatus}} {{notification.rejectionReason}}
+							</a>
+						</div>
+						<div class="dropdown-menu"
+							ng-repeat="notification in notificationViewed">
+							<a class="dropdown-item" style="color: blue">"{{notification.blogTitle}}
+								is {{notification.approvalStatus}}
+								{{notification.rejectionReason}}</a> </a>
+						</div></li> -->
+
+<!--<li ng-show="currentUser.username"><img src="http://localhost:8082/middleware/getimage/{{currentUser.username}}" alt="Upload profile picture" height="45" width="45" style=" border-radius: 50%;"></img></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link link dropdown-toggle"
+						data-toggle="dropdown-submenu" ng-show="currentUser.username">Welcome
+							{{currentUser.username}} 
+ 							</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#/editprofile"
+								ng-show="currentUser.username">Edit Profile</a> <a
+								class="dropdown-item" href="#/updateprofile"
+								ng-show="currentUser.username">Update Profile Picture</a> <a
+								class="dropdown-item" ng-show="currentUser.username"
+								ng-click="logout()">logout</a>
+						</div></li> -->
+		
+
+						<li><a href="" ng-show="currentUser.username"
+							ng-click="logout()">logout</a></li>
+						<li><a href="#/login" ng-hide="currentUser.username">Sign
+								In</a></li>
+						<li><a href="#/register" ng-hide="currentUser.username">Sign
+								Up</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div ng-view></div>
+</body>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
+
+<script type="text/javascript" src="js/app.js"></script>
+
+<script type="text/javascript" src="controllers/usercontroller.js"></script>
+<script type="text/javascript" src="services/userservice.js"></script>
+
+<script type="text/javascript" src="controllers/jobcontroller.js"></script>
+<script type="text/javascript" src="services/jobservice.js"></script>
+
+<script type="text/javascript" src="controllers/blogcontroller.js"></script>
+<script type="text/javascript" src="services/blogservice.js"></script>
+
+<script type="text/javascript" src="controllers/blogpostdetailscontroller.js"></script>
+
+<script type="text/javascript" src="services/homeservice.js"></script>
+<script type="text/javascript" src="controllers/homecontroller.js"></script>
+
+<script type="text/javascript" src="services/friendservice.js"></script>
+<script type="text/javascript" src="controller/friendcontroller.js"></script>
+
+<script type="text/javascript" src="controller/chatcontroller.js"></script>
+<script type="text/javascript" src="services/chatservice.js"></script>
+
+<link rel="stylesheet" href="css/navigationbar.css">
+<link rel="stylesheet" href="css/registerfont.css">
+
+<!-- <script  type="text/javascript" src="js/sockjs/sockjs.js"></script>
+<script type="text/javascript" src="js/stomp/dist/stomp.js"></script>
+ -->
+ <script src="js/sockjs/sockjs.js"></script>
+    <script src="js/stomp/dist/stomp.js"></script>
+
+
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/common/portfolio.css" rel="stylesheet">
+  
+<input name="animation" type="hidden">
+
+</html>

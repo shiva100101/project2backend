@@ -1,0 +1,32 @@
+Search
+<input type="text" ng-model="searchTxt" class="pull pull-left">
+<table class="table">
+	<thead>
+		<tr>
+			<th>Job Title</th>
+			<th>Skills Required</th>
+			<th>Posted on</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="job in jobs | filter:searchTxt">
+			<td><a href="" ng-click="getJob(job.id)">{{job.jobTitle}}</a></td>
+			<td>{{job.skillsRequired}}</td>
+			<td>{{job.postedOn | date:'dd:MM:yyyy'}}</td>
+		</tr>
+	</tbody>
+</table>
+<div ng-show="showDetails">
+<h3>Job Details</h3>
+<pre>
+JobTitle	:{{job.jobTitle}}
+JobDescription	:{{job.jobDescription}}
+Skills Required	:{{job.skillsRequired}}
+Location	:{{job.location}}
+Company name	:{{job.companyname}}
+Salary		:{{job.salary}}
+Posted On	:{{job.postedOn | date:'dd:MM:yyyy'}}
+Years of Exp	:{{job.yrsOfExp}}
+</pre>
+</div>
+<a href="#/home"><button>Back</button></a>
